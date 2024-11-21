@@ -1,0 +1,25 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.card__name {
+  opacity: 60%;
+  background-color: #ffffff;
+  position: absolute;
+  margin-top: 15px;
+  padding: 2px 12px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  border-radius: 4px;
+}
+
+.card__image {
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  width: 325px;
+  height: 328px;
+}

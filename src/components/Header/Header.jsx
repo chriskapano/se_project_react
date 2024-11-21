@@ -5,7 +5,7 @@ import avatar from "../../assets/avatar.png";
 function Header() {
   return (
     <header className="header">
-      <img className="header__logo" src={logo} alt="" />
+      <img className="header__logo" src={logo} alt="logo" />
       <p className="header__date-and-location">DATE, LOCATION</p>
       <button className="header__add-clothes-btn">+ Add clothes</button>
       <div className="header__user-container">

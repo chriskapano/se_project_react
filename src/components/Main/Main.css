@@ -1,0 +1,17 @@
+.cards {
+}
+
+.cards__text {
+  font-size: 20px;
+  line-height: 24.8px;
+  font-weight: 700;
+  margin: 40px 0 34px 0;
+}
+
+.cards__list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 17px;
+}
