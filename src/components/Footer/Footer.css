@@ -1,0 +1,20 @@
+.footer {
+  display: flex;
+  align-items: center;
+  padding: 171px 0 24px;
+  height: 20px;
+  width: 1358px;
+}
+
+.footer__title {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.footer__year {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  margin: 0 0 0 auto;
+}
