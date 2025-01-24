@@ -65,7 +65,7 @@
 }
 
 .toggle-switch__checkbox:checked ~ .toggle-switch__circle {
-  left: 26px;
+  left: 28px;
 }
 
 .toggle-switch__checkbox:not(:checked) ~ .toggle-switch__text_F {
