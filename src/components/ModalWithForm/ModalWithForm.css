@@ -54,9 +54,14 @@
   height: 36px;
   color: #fff;
   border: none;
-  background: #0000004d;
+  background: #000;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.modal__submit:hover {
+  background: #000;
+  opacity: 60%;
 }
 
 .modal__input {

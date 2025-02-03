@@ -2,7 +2,11 @@ import "./AddItemModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import { useState } from "react";
 
-export default function AddItemModal({ onClose, isOpen }) {
+export default function AddItemModal({
+  onClose,
+  isOpen,
+  onAddItemModalSubmit,
+}) {
   const [name, setName] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [weather, setWeather] = useState("");
@@ -21,9 +25,11 @@ export default function AddItemModal({ onClose, isOpen }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // update clothingItems array
-    // close the modal
+    onAddItemModalSubmit({ name, imageUrl, weather });
     // empty the inputs
+    setName("");
+    setImageUrl("");
+    setWeather("");
   };
 
   return (
