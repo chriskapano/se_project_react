@@ -1,7 +1,7 @@
 .clothes-section {
 }
 
-.clothes-section__items {
+.clothes-section__header {
   display: flex;
   padding-bottom: 16px;
 }
@@ -21,4 +21,13 @@
   font-weight: 700;
   opacity: 60%;
   line-height: 24.8px;
+}
+
+.clothes-section__items {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  gap: 17px;
 }
