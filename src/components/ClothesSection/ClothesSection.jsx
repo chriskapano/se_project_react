@@ -10,9 +10,9 @@ function ClothesSection({ onCardClick, clothingItems, weatherData }) {
       </div>
       <ul className="clothes-section__items">
         {clothingItems
-          .filter((item) => {
-            return item.weather === weatherData.type;
-          })
+          // .filter((item) => {
+          //   return item.weather === weatherData.type;
+          // })
           .map((item) => (
             <ItemCard key={item._id} item={item} onCardClick={onCardClick} />
           ))}
