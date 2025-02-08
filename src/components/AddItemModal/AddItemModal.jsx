@@ -39,6 +39,7 @@ export default function AddItemModal({
       buttonText="Add garment"
       onClose={onClose}
       onSubmit={handleSubmit}
+      className="modal__content"
     >
       <label htmlFor="name" className="modal__label">
         Name{" "}

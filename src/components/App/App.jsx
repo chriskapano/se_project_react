@@ -10,7 +10,7 @@ import Profile from "../Profile/Profile";
 import { filterWeatherData, getWeather } from "../../utils/weatherApi";
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 import AddItemModal from "../AddItemModal/AddItemModal";
-import { defaultClothingItems } from "../../utils/constants";
+import { getItems, addItem } from "../../utils/api";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -21,7 +21,7 @@ function App() {
     isDay: false,
   });
 
-  const [clothingItems, setClothingItems] = useState(defaultClothingItems);
+  const [clothingItems, setClothingItems] = useState([]);
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
@@ -44,13 +44,21 @@ function App() {
   };
 
   const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
-    // update clothingItems array
-    setClothingItems((prevItems) => [
-      { name, link: imageUrl, weather },
-      ...prevItems,
-    ]);
-    // close the modal
-    closeActiveModal();
+    addItem({ name, imageUrl, weather })
+      .then((data) => {
+        console.log("Added item:", data);
+        setClothingItems((prevItems) => [
+          {
+            _id: data._id,
+            name: data.name,
+            link: data.imageUrl,
+            weather: data.weather,
+          },
+          ...prevItems,
+        ]);
+        closeActiveModal();
+      })
+      .catch((error) => console.error("Error adding item:", error));
   };
 
   useEffect(() => {
@@ -60,6 +68,21 @@ function App() {
         setWeatherData(filteredData);
       })
       .catch(console.error);
+  }, []);
+
+  useEffect(() => {
+    getItems()
+      .then((data) => {
+        console.log("Fetched items:", data);
+        const transformedData = data.map((item) => ({
+          _id: item._id,
+          name: item.name,
+          weather: item.weather,
+          link: item.imageUrl,
+        }));
+        setClothingItems(transformedData);
+      })
+      .catch((error) => console.error("Error fetching items:", error));
   }, []);
 
   return (
@@ -82,7 +105,12 @@ function App() {
             />
             <Route
               path="/profile"
-              element={<Profile handleCardClick={handleCardClick} />}
+              element={
+                <Profile
+                  handleCardClick={handleCardClick}
+                  clothingItems={clothingItems}
+                />
+              }
             />
           </Routes>
 

@@ -26,6 +26,10 @@
   border-radius: 20px;
 }
 
+.modal__content_type_image {
+  padding: 0px !important;
+}
+
 .modal__title {
   margin: 0;
   font-size: 16px;

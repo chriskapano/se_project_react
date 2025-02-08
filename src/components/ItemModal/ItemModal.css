@@ -10,14 +10,36 @@
   border-top-right-radius: 20px;
 }
 
+.modal__footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__top-line {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 12px;
+}
+
 .modal__caption {
   font-size: 20px;
   line-height: 24px;
   font-weight: 700;
   margin: 0;
-  padding-top: 20px;
-  padding-bottom: 12px;
   padding-left: 32px;
+}
+
+.modal__delete-button {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  margin: 0;
+  padding-right: 32px;
+  color: #ff4d00;
+  border: none;
+  background: transparent;
+  cursor: pointer;
 }
 
 .modal__weather {
