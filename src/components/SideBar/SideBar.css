@@ -1,6 +1,5 @@
 .sidebar {
   display: flex;
-  align-items: center;
 }
 
 .sidebar__avatar {
@@ -12,6 +11,7 @@
 
 .sidebar__username {
   margin: 0px;
+  padding-top: 15px;
   padding-right: 116px;
   width: max-content;
   font-size: 20px;
