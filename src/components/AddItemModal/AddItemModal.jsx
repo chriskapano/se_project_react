@@ -25,11 +25,16 @@ export default function AddItemModal({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onAddItemModalSubmit({ name, imageUrl, weather });
-    // empty the inputs
-    setName("");
-    setImageUrl("");
-    setWeather("");
+    onAddItemModalSubmit({ name, imageUrl, weather })
+      .then(() => {
+        // empty the inputs
+        setName("");
+        setImageUrl("");
+        setWeather("");
+      })
+      .catch((error) => {
+        console.error("Error submitting form:", error);
+      });
   };
 
   return (
