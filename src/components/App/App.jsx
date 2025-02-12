@@ -44,21 +44,19 @@ function App() {
   };
 
   const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
-    return addItem({ name, imageUrl, weather })
-      .then((data) => {
-        console.log("Added item:", data);
-        setClothingItems((prevItems) => [
-          {
-            _id: data._id,
-            name: data.name,
-            link: data.imageUrl,
-            weather: data.weather,
-          },
-          ...prevItems,
-        ]);
-        closeActiveModal();
-      })
-      .catch((error) => console.error("Error adding item:", error));
+    return addItem({ name, imageUrl, weather }).then((data) => {
+      console.log("Added item:", data);
+      setClothingItems((prevItems) => [
+        {
+          _id: data._id,
+          name: data.name,
+          link: data.imageUrl,
+          weather: data.weather,
+        },
+        ...prevItems,
+      ]);
+      closeActiveModal();
+    });
   };
 
   const handleDeleteItem = (itemId) => {
