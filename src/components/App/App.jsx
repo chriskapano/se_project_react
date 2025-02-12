@@ -44,7 +44,7 @@ function App() {
   };
 
   const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
-    addItem({ name, imageUrl, weather })
+    return addItem({ name, imageUrl, weather })
       .then((data) => {
         console.log("Added item:", data);
         setClothingItems((prevItems) => [
@@ -100,7 +100,7 @@ function App() {
   useEffect(() => {
     getItems()
       .then((data) => {
-        console.log("Fetched items:", data);
+        // console.log("Fetched items:", data);
         const transformedData = data.map((item) => ({
           _id: item._id,
           name: item.name,
