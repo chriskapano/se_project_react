@@ -113,18 +113,6 @@
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Sneakers.png?etag=3efeec41c1c78b8afe26859ca7fa7b6f",
       "weather": "cold",
       "_id": 25
-    },
-    {
-      "name": "sweater",
-      "imageUrl": "https://5.imimg.com/data5/UV/OF/MY-2522185/1.jpg",
-      "weather": "cold",
-      "_id": 26
-    },
-    {
-      "name": "sweater",
-      "imageUrl": "https://static.vecteezy.com/system/resources/thumbnails/039/752/734/small/ai-generated-sweatshirt-on-dark-background-men-sweater-casual-male-clothing-man-s-apparel-photo.jpg",
-      "weather": "cold",
-      "_id": 27
     }
   ]
 }

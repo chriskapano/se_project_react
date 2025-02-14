@@ -45,7 +45,7 @@ function App() {
 
   const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
     return addItem({ name, imageUrl, weather }).then((data) => {
-      console.log("Added item:", data);
+      // console.log("Added item:", data);
       setClothingItems((prevItems) => [
         {
           _id: data._id,
